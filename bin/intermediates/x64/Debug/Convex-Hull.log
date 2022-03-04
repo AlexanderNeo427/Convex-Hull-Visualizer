@@ -1,0 +1,63 @@
+﻿  Main.cpp
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(66,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(147,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(166,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2352,52): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2385,48): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3059,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3060,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3061,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3062,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3063,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.h(39,18): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.h(38,27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,56): error C2664: 'Scene2DNode::Scene2DNode(const Scene2DNode &)': cannot convert argument 1 from 'std::shared_ptr<Node>' to 'const Scene2DNode &'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(142,1): message : Reason: cannot convert from 'std::shared_ptr<Node>' to 'const Scene2DNode'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,77): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Nodes\Scene2DNode.h(17,1): message : see declaration of 'Scene2DNode::Scene2DNode'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Node>&>(_Ty &,std::shared_ptr<Node> &) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Scene2DNode
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              _Ty=Scene2DNode
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              _Ty=Scene2DNode
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Node.h(40): message : see reference to function template instantiation 'std::shared_ptr<Scene2DNode> std::make_shared<T,std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              T=Scene2DNode
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Nodes\RootSceneNode.h(12): message : see reference to function template instantiation 'std::shared_ptr<Scene2DNode> Node::AddChildNode<Scene2DNode>(std::shared_ptr<Node>)' being compiled
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,56): error C2664: 'Scene3DNode::Scene3DNode(const Scene3DNode &)': cannot convert argument 1 from 'std::shared_ptr<Node>' to 'const Scene3DNode &'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(142,1): message : Reason: cannot convert from 'std::shared_ptr<Node>' to 'const Scene3DNode'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,77): message : No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Nodes\Scene3DNode.h(18,1): message : see declaration of 'Scene3DNode::Scene3DNode'
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<Node>&>(_Ty &,std::shared_ptr<Node> &) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Scene3DNode
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              _Ty=Scene3DNode
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              _Ty=Scene3DNode
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Node.h(40): message : see reference to function template instantiation 'std::shared_ptr<Scene3DNode> std::make_shared<T,std::shared_ptr<Node>&>(std::shared_ptr<Node> &)' being compiled
+          with
+          [
+              T=Scene3DNode
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Nodes\RootSceneNode.h(13): message : see reference to function template instantiation 'std::shared_ptr<Scene3DNode> Node::AddChildNode<Scene3DNode>(std::shared_ptr<Node>)' being compiled
