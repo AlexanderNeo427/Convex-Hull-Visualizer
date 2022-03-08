@@ -5,46 +5,37 @@
 #include <type_traits>
 #include <string>
 
-/**
- * - StateFactory 
- *		- Call OnInitialize() when states are created
- * - Convert raw ptrs to smart ptrs
- * - EventSystems
- *		- States implement OnHandleEvent()
- *		- EventPropagator??
- */
-
 namespace FSM
 {
-	template<class T> 
+	template<class T>
 	class StateMachine;
 
 	template<class T>
 	class State
 	{
 	public:
-		explicit State(const T stateID,
+		explicit State(const T& stateID,
 					   const std::string& name,
-					   const StateMachine<T>* owner)
+					   StateMachine<T>* owner)
 			:
 			m_stateID(stateID),
 			m_name(name),
 			m_owner(owner)
 		{
-			static_assert(std::is_enum(T), "T must be of type enum");
+			static_assert(std::is_enum<T>::value, "T must be of type enum");
 		}
 
-		virtual void OnInitialize() = 0;
 		virtual void OnEnter() = 0;
 		virtual void OnUpdate(const float deltaTime) = 0;
 		virtual void OnExit() = 0;
 
+		void TransitState(const T& stateID) const { m_owner->TransitState(stateID); }
 		T StateID() const { return m_stateID; }
 		const std::string& Name() const { return m_name; }
 	private:
 		const T m_stateID;
 		const std::string m_name;
-		const StateMachine<T>* m_owner;
+		StateMachine<T>* m_owner;
 	};
 }
 
@@ -60,16 +51,16 @@ namespace FSM
 		}
 		void AddState(State<T>* state)
 		{
-			static_assert(std::is_enum(T), "T must be of type enum");
+			static_assert(std::is_enum<T>::value, "T must be of type enum");
 
 			if (state == nullptr)
 				return;
 
-			m_allStates[state->m_stateID()] = state;
+			m_allStates[state->StateID()] = state;
 		}
-		void TransitState(const T& stateID)
+		void TransitState(const T stateID)
 		{
-			static_assert(std::is_enum(T), "T must be of type enum");
+			static_assert(std::is_enum<T>::value, "T must be of type enum");
 
 			State<T>* nextState = m_allStates[stateID];
 
@@ -83,17 +74,10 @@ namespace FSM
 			m_currentState = nextState;
 			m_currentState->OnEnter();
 		}
+		State<T>* CurrentState() const { return m_currentState; }
 	private:
 		std::unordered_map<T, State<T>*> m_allStates;
 		State<T>* m_currentState;
-	};
-}
-
-namespace FSM
-{
-	template<class T>
-	class StateFactory
-	{
 	};
 }
 

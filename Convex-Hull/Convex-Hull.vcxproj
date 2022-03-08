@@ -164,10 +164,8 @@
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Events.h" />
-    <ClInclude Include="src\NodeManager.h" />
-    <ClInclude Include="src\Nodes\RootSceneNode.h" />
-    <ClInclude Include="src\Nodes\Scene2DNode.h" />
-    <ClInclude Include="src\Nodes\Scene3DNode.h" />
+    <ClInclude Include="src\FiniteStateMachine.h" />
+    <ClInclude Include="src\States.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
