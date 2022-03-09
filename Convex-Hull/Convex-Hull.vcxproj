@@ -159,13 +159,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Events.h" />
-    <ClInclude Include="src\FiniteStateMachine.h" />
-    <ClInclude Include="src\States.h" />
+    <ClInclude Include="external\FiniteStateMachine.h" />
+    <ClInclude Include="src\Mode2D\Mode2D.h" />
+    <ClInclude Include="src\Mode2D\Mode2DContext.h" />
+    <ClInclude Include="src\Mode2D\Mode2D_States.h" />
+    <ClInclude Include="src\Mode3D\Mode3D.h" />
+    <ClInclude Include="src\Mode3D\Mode3DContext.h" />
+    <ClInclude Include="src\Mode3D\Mode3D_States.h" />
+    <ClInclude Include="src\StateEnums.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

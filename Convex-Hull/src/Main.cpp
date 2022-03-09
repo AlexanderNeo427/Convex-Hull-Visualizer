@@ -1,15 +1,17 @@
 #include "Application.h"
 
-int main()
+int main( void )
 {
     auto app = std::make_unique<Application>();
+
     app->OnInitialize();
-    
     while (app->IsRunning())
     {
         app->OnUpdate(GetFrameTime());
         app->OnRender();
     }
-    return 0;
+    app->OnExit();
+
+    return EXIT_SUCCESS;
 }
 

@@ -1,4 +1,4 @@
-﻿  Main.cpp
+﻿  Application.cpp
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(66,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(147,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(166,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
@@ -9,4 +9,41 @@ D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extr
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3061,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3062,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3063,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(16,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(16,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(17,48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(17,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(18,35): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(18,29): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(69,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(68,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,77): warning C4244: 'argument': conversion from 'const float' to 'const int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<FSM::StateMachine<T>>&,const float&,const float&>(_Ty &,std::shared_ptr<FSM::StateMachine<T>> &,const float &,const float &) noexcept(false)' being compiled
+          with
+          [
+              _Ty=Mode2D,
+              T=APP_STATE
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<FSM::StateMachine<T>>&,const float&,const float&>(std::shared_ptr<FSM::StateMachine<T>> &,const float &,const float &)' being compiled
+          with
+          [
+              _Ty=Mode2D,
+              T=APP_STATE
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<FSM::StateMachine<T>>&,const float&,const float&>(std::shared_ptr<FSM::StateMachine<T>> &,const float &,const float &)' being compiled
+          with
+          [
+              _Ty=Mode2D,
+              T=APP_STATE
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(28): message : see reference to function template instantiation 'std::shared_ptr<Mode2D> std::make_shared<Mode2D,std::shared_ptr<FSM::StateMachine<T>>&,const float&,const float&>(std::shared_ptr<FSM::StateMachine<T>> &,const float &,const float &)' being compiled
+          with
+          [
+              T=APP_STATE
+          ]
+  Main.cpp
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(66,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(147,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(166,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
+  Generating Code...
   Convex-Hull.vcxproj -> D:\Projects\C++\GitHub Projects\Convex-Hull\bin\x64\Debug\Convex-Hull.exe

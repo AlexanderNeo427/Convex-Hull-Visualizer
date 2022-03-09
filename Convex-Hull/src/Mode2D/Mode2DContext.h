@@ -1,0 +1,23 @@
+#ifndef _MODE_2D_CONTEXT_
+#define _MODE_2D_CONTEXT_
+
+#include <glm/vec2.hpp>
+#include <vector>
+
+class Mode2DContext
+{
+public:
+	Mode2DContext(const int width, const int height)
+		:
+		m_width(width), m_height(height) {}
+
+	const int Width() const { return m_width; }
+	const int Height() const { return m_height; }
+public:
+	std::vector<glm::vec2> points;
+private:
+	const int m_width;
+	const int m_height;
+};
+
+#endif
