@@ -14,10 +14,11 @@ public:
 	const int Width() const { return m_width; }
 	const int Height() const { return m_height; }
 public:
-	std::vector<glm::vec2> points;
+	std::vector<glm::vec2> allPoints;
+
+	int numPointsToGenerate = 0;
 private:
-	const int m_width;
-	const int m_height;
+	const int m_width, m_height;
 };
 
 #endif

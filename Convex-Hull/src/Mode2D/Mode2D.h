@@ -5,7 +5,10 @@
 
 #include "FiniteStateMachine.h"
 #include "../StateEnums.h"
-#include "Mode2D_States.h"
+
+#include "Mode2D_Idle.h"
+#include "Mode2D_GenPts.h"
+#include "Mode2D_ComputeCH.h"
 
 class Mode2D : public FSM::State<APP_STATE>
 {
@@ -15,12 +18,12 @@ public:
 		:
 		FSM::State<APP_STATE>(APP_STATE::MODE_2D, "Mode 2D", pOwner)
 	{
-		m_pContext = std::make_shared<Mode2DContext>(width, height);
+		m_pCtx = std::make_shared<Mode2DContext>(width, height);
 
 		m_pStateMachine = std::make_shared<FSM::StateMachine<MODE_STATE>>();
-		m_pStateMachine->RegisterState(std::make_shared<Mode2D_Idle>(m_pStateMachine, m_pContext));
-		m_pStateMachine->RegisterState(std::make_shared<Mode2D_GenPts>(m_pStateMachine, m_pContext));
-		m_pStateMachine->RegisterState(std::make_shared<Mode2D_ComputeCH>(m_pStateMachine, m_pContext));
+		m_pStateMachine->RegisterState(std::make_shared<Mode2D_Idle>(m_pStateMachine, m_pCtx));
+		m_pStateMachine->RegisterState(std::make_shared<Mode2D_GenPts>(m_pStateMachine, m_pCtx));
+		m_pStateMachine->RegisterState(std::make_shared<Mode2D_ComputeCH>(m_pStateMachine, m_pCtx));
 		m_pStateMachine->TransitState(MODE_STATE::IDLE);
 	}
 	void OnUpdate(const float deltaTime) override 
@@ -29,6 +32,10 @@ public:
 	};
 	void OnRender() override 
 	{
+		for (const glm::vec2& p : m_pCtx->allPoints)
+		{
+			DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
+		}
 		m_pStateMachine->OnRender();
 	};
 	void OnHandleEvent(std::shared_ptr<Event> evt) override 
@@ -36,7 +43,7 @@ public:
 		m_pStateMachine->OnHandleEvent(evt);
 	};
 private:
-	std::shared_ptr<Mode2DContext> m_pContext;
+	std::shared_ptr<Mode2DContext> m_pCtx;
 	std::shared_ptr<FSM::StateMachine<MODE_STATE>> m_pStateMachine;
 };
 

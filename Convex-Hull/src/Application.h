@@ -29,7 +29,11 @@ private:
 	std::shared_ptr<raylib::RenderTexture2D> m_pRT2D;
 	std::queue<std::shared_ptr<Event>> m_eventQueue;
 	raylib::Rectangle m_viewportRect;
+private:
 	float m_numPoints = 30.f;
+
+	bool m_editCH2DeditMode;
+	int m_editCH2DActive;
 };
 
 #endif

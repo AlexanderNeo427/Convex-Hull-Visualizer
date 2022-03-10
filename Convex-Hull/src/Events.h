@@ -25,5 +25,6 @@ private:
 	const int m_numPoints;
 };
 //------------------------------------------------------------------
+struct ComputeCHEvt : public Event {};
 
 #endif

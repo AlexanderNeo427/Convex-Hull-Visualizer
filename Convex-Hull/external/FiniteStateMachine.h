@@ -95,6 +95,7 @@ namespace FSM
 			m_pCurrentState->OnHandleEvent(evt);
 		}
 		const std::string& CurrentStateName() const { return m_pCurrentState->Name(); }
+		const T& CurrentStateID() const { return m_pCurrentState->StateID(); }
 	private:
 		std::unordered_map<T, std::shared_ptr<FSM::State<T>>> m_allStates;
 		std::shared_ptr<FSM::State<T>> m_pCurrentState;

@@ -164,11 +164,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\ConvexHull2D\ConvexHull2D_Algos.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="external\FiniteStateMachine.h" />
     <ClInclude Include="src\Mode2D\Mode2D.h" />
     <ClInclude Include="src\Mode2D\Mode2DContext.h" />
-    <ClInclude Include="src\Mode2D\Mode2D_States.h" />
+    <ClInclude Include="src\Mode2D\Mode2D_GenPts.h" />
+    <ClInclude Include="src\Mode2D\Mode2D_ComputeCH.h" />
+    <ClInclude Include="src\Mode2D\Mode2D_Idle.h" />
     <ClInclude Include="src\Mode3D\Mode3D.h" />
     <ClInclude Include="src\Mode3D\Mode3DContext.h" />
     <ClInclude Include="src\Mode3D\Mode3D_States.h" />

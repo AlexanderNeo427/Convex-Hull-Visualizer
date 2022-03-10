@@ -3,5 +3,13 @@
 
 enum class APP_STATE { MODE_2D, MODE_3D };
 enum class MODE_STATE { IDLE, GEN_PTS, COMPUTE_CH };
+enum class CH2D
+{
+	JARVIS_MARCH = 0,
+	GRAHAM_SCAN,
+	MONOTONE_CHAIN,
+	CHANS_ALGORITHM,
+	QUICK_HULL,
+};
 
 #endif

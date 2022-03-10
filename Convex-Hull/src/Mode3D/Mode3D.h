@@ -23,7 +23,6 @@ public:
 		m_pStateMachine->RegisterState(std::make_shared<Mode3D_ComputeCH>(m_pStateMachine, m_pContext));
 		m_pStateMachine->TransitState(MODE_STATE::IDLE);
 	}
-
 	void OnUpdate(const float deltaTime) override
 	{
 		m_pStateMachine->OnUpdate(deltaTime);
