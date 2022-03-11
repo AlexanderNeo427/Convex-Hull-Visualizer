@@ -20,6 +20,7 @@ public:
 	void OnEnter() override
 	{
 		m_pCtx->allPoints.clear();
+		m_pCtx->hullPoints.clear();
 
 		m_timeElapsed = 0.f;
 		m_targetFrameTime = TARGET_GEN_PTS_TIME / m_pCtx->numPointsToGenerate;

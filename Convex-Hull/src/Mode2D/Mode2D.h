@@ -36,6 +36,15 @@ public:
 		{
 			DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
 		}
+		if (m_pCtx->hullPoints.size() >= 2)
+		{
+			for (int i = 0; i < m_pCtx->hullPoints.size(); i++)
+			{
+				const glm::vec2& p1 = m_pCtx->hullPoints[i];
+				const glm::vec2& p2 = m_pCtx->hullPoints[i + 1];
+				DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::RayWhite());
+			}
+		}
 		m_pStateMachine->OnRender();
 	};
 	void OnHandleEvent(std::shared_ptr<Event> evt) override 

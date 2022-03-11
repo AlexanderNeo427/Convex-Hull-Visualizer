@@ -12,6 +12,26 @@ D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(37,1
           [
               T=float
           ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,34): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,28): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2352,52): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2385,48): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3059,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -65,6 +85,26 @@ D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(37,2
               T=float
           ]
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(37,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,34): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,28): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Mode2D\Mode2D.h(45,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float

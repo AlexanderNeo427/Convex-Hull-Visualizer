@@ -164,9 +164,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
-    <ClInclude Include="src\ConvexHull2D\ConvexHull2D_Algos.h" />
+    <ClInclude Include="src\Mode2D\Jarvis_March\JarvisMarch2D.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="external\FiniteStateMachine.h" />
+    <ClInclude Include="src\GUI_Wrappers\DropdownExtended.h" />
+    <ClInclude Include="src\Mode2D\Jarvis_March\JM2DContext.h" />
+    <ClInclude Include="src\Mode2D\Jarvis_March\JM_STATES.h" />
     <ClInclude Include="src\Mode2D\Mode2D.h" />
     <ClInclude Include="src\Mode2D\Mode2DContext.h" />
     <ClInclude Include="src\Mode2D\Mode2D_GenPts.h" />
