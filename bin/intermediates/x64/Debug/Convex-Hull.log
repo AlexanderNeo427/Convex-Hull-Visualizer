@@ -1,45 +1,14 @@
-﻿  Application.cpp
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(66,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(147,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib-cpp\Functions.hpp(166,3): warning C5051: attribute 'maybe_unused' requires at least '/std:c++17'; ignored
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2352,52): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2385,48): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3059,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3060,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3061,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3062,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3063,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(25,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(25,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(26,48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(26,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(27,35): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(27,29): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(74,11): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(72,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(89,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(88,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(96,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(95,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(94,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(93,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,77): warning C4244: 'argument': conversion from 'const float' to 'const int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(_Ty &,std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &) noexcept(false)' being compiled
+﻿  SceneCH2D.cpp
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(29,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
-              _Ty=SceneCH2D
+              T=float
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(29,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
-              _Ty=SceneCH2D
+              T=float
           ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
-          with
-          [
-              _Ty=SceneCH2D
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(37): message : see reference to function template instantiation 'std::shared_ptr<SceneCH2D> std::make_shared<SceneCH2D,std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
-  SceneCH2D.cpp
+  Main.cpp
   Generating Code...
   Convex-Hull.vcxproj -> D:\Projects\C++\GitHub Projects\Convex-Hull\bin\x64\Debug\Convex-Hull.exe

@@ -5,17 +5,24 @@
 
 struct Event 
 {
-	enum class TYPE { GEN_PTS };
-
+public:
+	enum class TYPE 
+	{ 
+		GEN_PTS,
+		COMPUTE_CH,
+		SET_CH_ALGO,
+	};
+public:
 	struct GenPointsEvent { int numPoints; };
-
+	struct SetChAlgo {};
+public:
 	union 
 	{
-		GenPointsEvent genPtsEvt;
+		GenPointsEvent genPtsData;
+		SetChAlgo setChAlgoData;
 	};
 public:
 	TYPE type;
-
 };
 
 #endif

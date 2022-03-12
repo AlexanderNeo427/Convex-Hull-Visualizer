@@ -10,7 +10,7 @@ Application::Application()
 	:
 	m_pWindow(nullptr),
 	m_pRT2D(nullptr),
-	m_numPtsToGen(0)
+	m_numPtsToGen(35)
 {}
 
 void Application::OnInitialize()
@@ -71,14 +71,20 @@ void Application::OnRender()
 		// Draw GUI elements
 		m_numPtsToGen = GuiSlider(Rectangle{ 130, 120, 350, 30 }, "No. points ",
 								  std::to_string(m_numPtsToGen).c_str(),
-								  m_numPtsToGen, 15, 130);
+								  m_numPtsToGen, 15, 100);
 
-		if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate"))
+		if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate Points"))
 		{
+			Event evt;
+			evt.type = Event::TYPE::GEN_PTS;
+			evt.genPtsData.numPoints = m_numPtsToGen;
+			m_eventQueue.push(evt);
 		}
-
 		if (GuiButton(Rectangle{ 130, 450, 250, 45 }, "Compute Convex Hull"))
 		{
+			Event evt;
+			evt.type = Event::TYPE::COMPUTE_CH;
+			m_eventQueue.push(evt);
 		}
 
 		// Draw renderTexture2D + viewport bounds

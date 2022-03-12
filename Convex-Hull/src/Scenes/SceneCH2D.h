@@ -1,10 +1,16 @@
 #ifndef _SCENE_CONVEX_HULL_2D_
 #define _SCENE_CONVEX_HULL_2D_
 
+#include <vector>
 #include <queue>
 
+#include <raylib-cpp.hpp>
+
+#include <glm/gtc/random.hpp>
+#include <glm/vec2.hpp>
+
+#include "../Convex-Hull/IConvexHull.h"
 #include "SceneSystem/SceneManager.h"
-#include "../SceneContext.h"
 #include "../IAnimFrame.h"
 
 class SceneCH2D : public IScene
@@ -19,8 +25,15 @@ public:
 	void OnUpdate(const float deltaTime) override;
 	void OnRender() override;
 	void OnHandleEvent(const Event& event) override;
+
+	void RegeneratePoints(const int numPoints);
 private:
-	std::queue<std::shared_ptr<IAnimFrame>> m_animFrameQueue;
+	std::vector<glm::vec2> m_allPoints;
+	std::vector<glm::vec2> m_hullPoints;
+
+	std::shared_ptr<IConvexHull2D> m_ch2D;
+
+	std::queue<std::shared_ptr<IAnimFrame2D>> m_animFrameQueue;
 };
 
 #endif
