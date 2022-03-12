@@ -8,13 +8,13 @@
 struct IAnimFrame2D
 {
 	virtual void OnRender(const std::vector<glm::vec2> allPoints,
-						  const std::vector<glm::vec2> hullPoints) = 0;
+						  const std::vector<int> hullIndices) = 0;
 };
 
 struct IAnimFrame3D
 {
 	virtual void OnRender(const std::vector<glm::vec3> allPoints,
-						  const std::vector<glm::vec3> hullPoints) = 0;
+						  const std::vector<int> hullIndices) = 0;
 };
 
 #endif

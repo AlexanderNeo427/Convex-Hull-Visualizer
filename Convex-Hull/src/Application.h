@@ -12,9 +12,9 @@
 struct Application
 {
 private:
-	static const int	   SCR_WIDTH  = 1300;
-	static const int	   SCR_HEIGHT = 800;
-	static constexpr float RT_AR	  = 0.9f;
+	static constexpr int   SCR_WIDTH  = 1300;
+	static constexpr int   SCR_HEIGHT = 800;
+	static constexpr float RT_AR	  = 0.85f;
 public:
 	explicit Application();
 

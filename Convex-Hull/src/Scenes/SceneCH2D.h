@@ -11,7 +11,7 @@
 
 #include "../Convex-Hull/IConvexHull.h"
 #include "SceneSystem/SceneManager.h"
-#include "../IAnimFrame.h"
+#include "../Utils.h"
 
 class SceneCH2D : public IScene
 {
@@ -22,14 +22,13 @@ public:
 					   const int height);
 	
 	void OnInitialize() override;
-	void OnUpdate(const float deltaTime) override;
 	void OnRender() override;
 	void OnHandleEvent(const Event& event) override;
 
 	void RegeneratePoints(const int numPoints);
 private:
 	std::vector<glm::vec2> m_allPoints;
-	std::vector<glm::vec2> m_hullPoints;
+	std::vector<int> m_hullIndices;
 
 	std::shared_ptr<IConvexHull2D> m_ch2D;
 

@@ -1,14 +1,144 @@
 ﻿  SceneCH2D.cpp
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(29,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Utils.h(19,11): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(29,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(18,32): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-  Main.cpp
-  Generating Code...
-  Convex-Hull.vcxproj -> D:\Projects\C++\GitHub Projects\Convex-Hull\bin\x64\Debug\Convex-Hull.exe
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(18,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(19,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(19,23): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(39,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(39,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(39,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(39,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(40,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(40,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(40,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(40,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(47,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(47,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(47,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(47,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(28,33): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(28,27): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(28,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(28,15): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(32,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(32,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(39,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(39,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(142,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int&,int&,int&,unsigned __int64>(_Ty &,int &,int &,int &,unsigned __int64 &&) noexcept(false)' being compiled
+          with
+          [
+              _Ty=JmCompareAngle
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=JmCompareAngle
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
+          with
+          [
+              _Ty=JmCompareAngle
+          ]
+D:\Ahboy's Misc\Raylib\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(77): message : see reference to function template instantiation 'std::shared_ptr<JmCompareAngle> std::make_shared<JmCompareAngle,int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
+  Convex-Hull.vcxproj -> D:\Ahboy's Misc\Raylib\Convex-Hull\bin\x64\Debug\Convex-Hull.exe

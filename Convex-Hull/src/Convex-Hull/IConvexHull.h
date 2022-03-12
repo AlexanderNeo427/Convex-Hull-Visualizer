@@ -7,20 +7,24 @@
 
 #include "../IAnimFrame.h"
 
+struct Ch2DOutput
+{
+	std::vector<int> hullIndices;
+	std::queue<std::shared_ptr<IAnimFrame2D>> animQueue;
+};
 struct IConvexHull2D
 {
-	using Points2D	  = std::vector<glm::vec2>;
-	using AnimQueue2D = std::queue<std::shared_ptr<IAnimFrame2D>>;
-
-	virtual std::pair<Points2D, AnimQueue2D> Compute(const Points2D& allPoints) = 0;
+	virtual Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) = 0;
 };
-
+//-----------------------------------------------------------------------------
+struct Ch3DOutput
+{
+	std::vector<int> hullIndices;
+	std::queue<std::shared_ptr<IAnimFrame3D>> animQueue;
+};
 struct IConvexHull3D
 {
-	using Points3D	  = std::vector<glm::vec3>;
-	using AnimQueue3D = std::queue<std::shared_ptr<IAnimFrame3D>>;
-
-	virtual std::pair<Points3D, AnimQueue3D> Compute(const Points3D& allPoints) = 0;
+	virtual Ch3DOutput Compute(const std::vector<glm::vec3>& allPoints) = 0;
 };
 
 #endif

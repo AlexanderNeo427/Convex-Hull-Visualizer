@@ -1,5 +1,5 @@
 #include "SceneCH2D.h"
-
+ 
 #include "../Convex-Hull/JarvisMarch2D.h"
 
 SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager, 
@@ -13,18 +13,20 @@ SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 void SceneCH2D::OnInitialize()
 {
 	this->RegeneratePoints(30);
-
-	// TODO: Initialize convex hull algorithm
-}
-
-void SceneCH2D::OnUpdate(const float deltaTime)
-{
+	m_ch2D = std::make_shared<JarvisMarch2D>();
 }
 
 void SceneCH2D::OnRender()
 {
 	if (m_animFrameQueue.empty())
 	{
+		for (int i = 0; i < m_hullIndices.size(); i++)
+		{
+			const int nextIdx = (i == m_hullIndices.size() - 1) ? 0 : (i + 1);
+			const glm::vec2& p1 = m_allPoints[m_hullIndices[i]];
+			const glm::vec2& p2 = m_allPoints[m_hullIndices[nextIdx]];
+			DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::Yellow());
+		}
 		for (const glm::vec2& p : m_allPoints)
 		{
 			DrawCircle(p.x, p.y, 2.5f, raylib::Color::Green());
@@ -32,7 +34,11 @@ void SceneCH2D::OnRender()
 	}
 	else
 	{
-		m_animFrameQueue.front()->OnRender(m_allPoints, m_hullPoints);
+		for (const glm::vec2& p : m_allPoints)
+		{
+			DrawCircle(p.x, p.y, 2.5f, raylib::Color::Green());
+		}
+		m_animFrameQueue.front()->OnRender(m_allPoints, m_hullIndices);
 		m_animFrameQueue.pop();
 	}
 }
@@ -49,9 +55,9 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 	case Event::TYPE::COMPUTE_CH:
 	{
 		m_animFrameQueue = {};
-		auto const &[hullPoints, animFrames] = m_ch2D->Compute(m_allPoints);
-		m_hullPoints = hullPoints;
-		m_animFrameQueue = animFrames;
+		const Ch2DOutput out = m_ch2D->Compute(m_allPoints);
+		m_hullIndices = out.hullIndices;
+		m_animFrameQueue = out.animQueue;
 		break;
 	}
 	case Event::TYPE::SET_CH_ALGO:
@@ -63,8 +69,9 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 
 void SceneCH2D::RegeneratePoints(const int numPoints)
 {
+	m_animFrameQueue = {};
 	m_allPoints.clear();
-	m_hullPoints.clear();
+	m_hullIndices.clear();
 
 	const float width = static_cast<float>(Width());
 	const float height = static_cast<float>(Height());
