@@ -9,10 +9,13 @@ struct JmFindLeftmost2D : public IAnimFrame2D
         :
         m_currLeftmostIdx(leftmostIdx), m_compareIdx(compareIdx)
     {}
-
     void OnRender(const std::vector<glm::vec2> allPoints,
                   const std::vector<int> hullIndices) override
     {
+        for (const glm::vec2& p : allPoints)
+        {
+            DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
+        }
         const glm::vec2& curr = allPoints[m_currLeftmostIdx];
         const glm::vec2& cmp = allPoints[m_compareIdx];
         DrawCircle(curr.x, curr.y, 5.5f, raylib::Color::Red());
@@ -29,7 +32,6 @@ struct JmCompareAngle: public IAnimFrame2D
         :
         m_currIdx(currIdx), m_prevIdx(prevIdx), m_compareIdx(compareIdx), m_hullIndex(hullIndex)
     {}
-
     void OnRender(const std::vector<glm::vec2> allPoints,
                   const std::vector<int> hullIndices) override
     {
@@ -41,10 +43,14 @@ struct JmCompareAngle: public IAnimFrame2D
 
         for (int i = 0; i < m_hullIndex - 1; i++)
         {
-            const int nextIdx = (i == m_hullIndex - 1) ? 0 : i + 1;
+            const int nextIdx = (i == m_hullIndex - 1) ? 0 : (i + 1);
             const glm::vec2& p1 = allPoints[hullIndices[i]];
             const glm::vec2& p2 = allPoints[hullIndices[i + 1]];
             DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::Yellow());
+        }
+        for (const glm::vec2& p : allPoints)
+        {
+            DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
         }
     }
 private:

@@ -1,5 +1,4 @@
 #include "SceneCH2D.h"
- 
 #include "../Convex-Hull/JarvisMarch2D.h"
 
 SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager, 
@@ -7,18 +6,36 @@ SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 					 const int width, 
 					 const int height)
 	:
-	IScene(pSceneManager, sceneID, width, height)
+	IScene(pSceneManager, sceneID, width, height),
+	m_targetTimestep(0.f), m_timeElapsed(0.f)
 {}
 
 void SceneCH2D::OnInitialize()
 {
-	this->RegeneratePoints(55);
+	this->RegeneratePoints(50);
 	m_ch2D = std::make_shared<JarvisMarch2D>();
+}
+
+void SceneCH2D::OnUpdate(const float deltaTime)
+{
+	m_timeElapsed += deltaTime;
+	if (m_timeElapsed >= m_targetTimestep)
+	{
+		m_timeElapsed = 0.f;
+
+		if (m_animFrameQueue.empty())
+			m_pAnimFrame = nullptr;
+		else
+		{
+			m_pAnimFrame = m_animFrameQueue.front();
+			m_animFrameQueue.pop();
+		}
+	}
 }
 
 void SceneCH2D::OnRender()
 {
-	if (m_animFrameQueue.empty())
+	if (m_pAnimFrame == nullptr)
 	{
 		for (int i = 0; i < m_hullIndices.size(); i++)
 		{
@@ -29,17 +46,12 @@ void SceneCH2D::OnRender()
 		}
 		for (const glm::vec2& p : m_allPoints)
 		{
-			DrawCircle(p.x, p.y, 2.5f, raylib::Color::Green());
+			DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
 		}
 	}
 	else
 	{
-		for (const glm::vec2& p : m_allPoints)
-		{
-			DrawCircle(p.x, p.y, 2.5f, raylib::Color::Green());
-		}
-		m_animFrameQueue.front()->OnRender(m_allPoints, m_hullIndices);
-		m_animFrameQueue.pop();
+		m_pAnimFrame->OnRender(m_allPoints, m_hullIndices);
 	}
 }
 
@@ -60,6 +72,11 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 		m_animFrameQueue = out.animQueue;
 		break;
 	}
+	case Event::TYPE::SET_TIMESTEP:
+	{
+		m_targetTimestep = event.setTimeStepData.timeStep;
+		break;
+	}
 	case Event::TYPE::SET_CH_ALGO:
 		break;
 	default:
@@ -76,11 +93,14 @@ void SceneCH2D::RegeneratePoints(const int numPoints)
 	const float width = static_cast<float>(Width());
 	const float height = static_cast<float>(Height());
 	const glm::vec2 center(width * 0.5f, height * 0.5f);
-	const float maxLen = glm::min(width, height) * 0.5f * 0.75f;
+	const float maxLen = glm::min(width, height) * 0.5f * 0.725f;
 
 	for (int i = 0; i < numPoints; i++)
 	{
 		const glm::vec2& point = center + glm::diskRand(maxLen);
 		m_allPoints.emplace_back(point);
+
+		auto anim = std::make_shared<GenPoint2D>(i);
+		m_animFrameQueue.push(anim);
 	}
 }

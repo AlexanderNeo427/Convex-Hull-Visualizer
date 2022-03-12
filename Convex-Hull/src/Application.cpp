@@ -9,9 +9,16 @@
 Application::Application()
 	:
 	m_pWindow(nullptr),
+	m_pSceneManager(nullptr),
 	m_pRT2D(nullptr),
-	m_numPtsToGen(55)
-{}
+	m_eventQueue(),
+	m_viewportRect(),
+	m_numPtsToGen(0),
+	m_targetTimestep(0.f)
+{
+	m_numPtsToGen = (MAX_POINTS - MIN_POINTS) / 2;
+	m_targetTimestep = (TIMESTEP_MAX - TIMESTEP_MIN) / 2.f;
+}
 
 void Application::OnInitialize()
 {
@@ -69,15 +76,24 @@ void Application::OnRender()
 	DrawFPS(25, 20);
 	{
 		// Draw GUI elements
-		m_numPtsToGen = GuiSlider(Rectangle{ 130, 120, 350, 30 }, "No. points ",
+		m_numPtsToGen = GuiSlider(Rectangle{ 130, 120, 370, 30 }, "No. points ",
 								  std::to_string(m_numPtsToGen).c_str(),
-								  m_numPtsToGen, 15, 100);
+								  m_numPtsToGen, MIN_POINTS, MAX_POINTS);
 
 		if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate Points"))
 		{
 			Event evt;
 			evt.type = Event::TYPE::GEN_PTS;
 			evt.genPtsData.numPoints = m_numPtsToGen;
+			m_eventQueue.push(evt);
+		}
+		{
+			m_targetTimestep = GuiSlider(Rectangle{ 130, 400, 370, 30 }, "Timestep ",
+										 std::to_string(m_targetTimestep).c_str(),
+										 m_targetTimestep, TIMESTEP_MIN, TIMESTEP_MAX);
+			Event evt;
+			evt.type = Event::TYPE::SET_TIMESTEP;
+			evt.setTimeStepData.timeStep = m_targetTimestep;
 			m_eventQueue.push(evt);
 		}
 		if (GuiButton(Rectangle{ 130, 450, 250, 45 }, "Compute Convex Hull"))

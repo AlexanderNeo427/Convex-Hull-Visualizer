@@ -22,6 +22,7 @@ public:
 					   const int height);
 	
 	void OnInitialize() override;
+	void OnUpdate(const float deltaTime) override;
 	void OnRender() override;
 	void OnHandleEvent(const Event& event) override;
 
@@ -31,8 +32,10 @@ private:
 	std::vector<int> m_hullIndices;
 
 	std::shared_ptr<IConvexHull2D> m_ch2D;
-
 	std::queue<std::shared_ptr<IAnimFrame2D>> m_animFrameQueue;
+	std::shared_ptr<IAnimFrame2D> m_pAnimFrame;
+
+	float m_targetTimestep, m_timeElapsed;
 };
 
 #endif
