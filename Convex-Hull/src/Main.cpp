@@ -7,7 +7,7 @@ int main( void )
     app->OnInitialize();
     while (app->IsRunning())
     {
-        app->OnUpdate(GetFrameTime());
+        app->OnUpdate();
         app->OnRender();
     }
     app->OnExit();

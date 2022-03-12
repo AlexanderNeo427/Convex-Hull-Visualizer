@@ -159,26 +159,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="external\SceneSystem\SceneManager.cpp" />
+    <ClCompile Include="src\Scenes\SceneCH2D.cpp" />
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\SceneSystem\IScene.h" />
+    <ClInclude Include="external\SceneSystem\SceneManager.h" />
+    <ClInclude Include="src\IAnimFrame.h" />
+    <ClInclude Include="src\SceneContext.h" />
+    <ClInclude Include="src\Scenes\SceneCH2D.h" />
     <ClInclude Include="src\Application.h" />
-    <ClInclude Include="src\Mode2D\Jarvis_March\JarvisMarch2D.h" />
     <ClInclude Include="src\Events.h" />
     <ClInclude Include="external\FiniteStateMachine.h" />
-    <ClInclude Include="src\GUI_Wrappers\DropdownExtended.h" />
-    <ClInclude Include="src\Mode2D\Jarvis_March\JM2DContext.h" />
-    <ClInclude Include="src\Mode2D\Jarvis_March\JM_STATES.h" />
-    <ClInclude Include="src\Mode2D\Mode2D.h" />
-    <ClInclude Include="src\Mode2D\Mode2DContext.h" />
-    <ClInclude Include="src\Mode2D\Mode2D_GenPts.h" />
-    <ClInclude Include="src\Mode2D\Mode2D_ComputeCH.h" />
-    <ClInclude Include="src\Mode2D\Mode2D_Idle.h" />
-    <ClInclude Include="src\Mode3D\Mode3D.h" />
-    <ClInclude Include="src\Mode3D\Mode3DContext.h" />
-    <ClInclude Include="src\Mode3D\Mode3D_States.h" />
-    <ClInclude Include="src\StateEnums.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

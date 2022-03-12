@@ -4,10 +4,19 @@
 #include <raygui.h>
 #undef RAYGUI_IMPLEMENTATION
 
+#include "Scenes/SceneCH2D.h"
+
+Application::Application()
+	:
+	m_pWindow(nullptr),
+	m_pRT2D(nullptr),
+	m_numPtsToGen(0)
+{}
+
 void Application::OnInitialize()
 {
 	// Initialize Window
-	m_pWindow = std::make_unique<raylib::Window>(SCR_WIDTH, SCR_HEIGHT, "Convex Hull");
+	m_pWindow = std::make_unique<raylib::Window>(SCR_WIDTH, SCR_HEIGHT, "Convex Hull Visualizer");
 	m_pWindow->SetTargetFPS(200);
 
 	// Initialize viewport rect 
@@ -19,79 +28,73 @@ void Application::OnInitialize()
 	m_viewportRect.SetWidth(rtWidth);
 	m_viewportRect.SetHeight(rtHeight);
 
-	// Initialize renderTexture
+	// Initialize renderTexture2D
 	m_pRT2D = std::make_shared<raylib::RenderTexture2D>();
 	m_pRT2D->Load(static_cast<int>(rtWidth), static_cast<int>(rtHeight));
 
-	// Initialize stateMachines + app states
-	m_pAppFSM = std::make_shared<FSM::StateMachine<APP_STATE>>();
-	m_pAppFSM->RegisterState(std::make_shared<Mode2D>(m_pAppFSM, rtWidth, rtHeight));
-	m_pAppFSM->RegisterState(std::make_shared<Mode3D>(m_pAppFSM, rtWidth, rtHeight));
-	m_pAppFSM->TransitState(APP_STATE::MODE_2D);
+	// Initialize scenes
+	m_pSceneManager = std::make_shared<SceneManager>();
+	auto scene2D = std::make_shared<SceneCH2D>(m_pSceneManager, "SceneCH2D", rtWidth, rtHeight);
+	m_pSceneManager->AddScene(scene2D);
 
 	SetConfigFlags(FLAG_MSAA_4X_HINT);
 	GuiSetStyle(DEFAULT, TEXT_SIZE, 20);
 }
 
-void Application::OnUpdate(const float deltaTime)
+void Application::OnUpdate()
 {
 	while (!m_eventQueue.empty())
 	{
-		m_pAppFSM->OnHandleEvent(m_eventQueue.front());
+		const Event& event = m_eventQueue.front();
+		m_pSceneManager->OnHandleEvent(event);
 		m_eventQueue.pop();
 	}
-	m_pAppFSM->OnUpdate(deltaTime);
+	const float deltaTime = m_pWindow->GetFrameTime();
+	m_pSceneManager->OnUpdate(deltaTime);
 }
 
 void Application::OnRender()
 {
-	// Draw current scene to renderTexture
-	m_pRT2D->BeginMode();
-	{
-		m_pWindow->ClearBackground(raylib::Color::Blank());
-		m_pAppFSM->OnRender();
-	}
-	m_pRT2D->EndMode();
+	// Draw current scene to renderTexture2D
+	 m_pRT2D->BeginMode();
+	 {
+		 m_pWindow->ClearBackground(raylib::Color::Blank());
+		 m_pSceneManager->OnRender();
+	 }
+	 m_pRT2D->EndMode();
 
+	// Draw GUI elements
 	m_pWindow->BeginDrawing();
 	m_pWindow->ClearBackground(raylib::Color::Blank());
+	DrawFPS(25, 20);
 	{
-		DrawFPS(20, 15);
+		// Draw GUI elements
+		m_numPtsToGen = GuiSlider(Rectangle{ 130, 120, 350, 30 }, "No. points ",
+								  std::to_string(m_numPtsToGen).c_str(),
+								  m_numPtsToGen, 15, 130);
+
+		if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate"))
 		{
-			// GUI elements
-			m_numPoints = GuiSlider(Rectangle{ 130, 120, 350, 30 }, "No. points ", 
-									std::to_string(static_cast<int>(m_numPoints)).c_str(), 
-									m_numPoints, 15, 150);
-
-			if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate"))
-			{
-				auto genPtsEvt = std::make_shared<GenPtsEvt>(static_cast<int>(m_numPoints));
-				m_eventQueue.push(genPtsEvt);
-			}
-
-			if (GuiButton(Rectangle{ 130, 450, 250, 45 }, "Compute Convex Hull"))
-			{
-				m_eventQueue.push(std::make_shared<ComputeCHEvt>());
-			}
-
-			if (m_editCH2DeditMode)
-				GuiLock();
-			const std::string& ch2D_algos = "Jarvis March;Graham Scan;Monotone Chain;Chans Algorithm;QuickHull";
-			if (GuiDropdownBox(Rectangle{ 130, 380, 230, 45 }, ch2D_algos.c_str(), &m_editCH2DActive, m_editCH2DeditMode))
-			{
-				m_editCH2DeditMode = !m_editCH2DeditMode;
-			}
-			GuiUnlock();
 		}
+
+		if (GuiButton(Rectangle{ 130, 450, 250, 45 }, "Compute Convex Hull"))
 		{
-			// Render viewport + bounds
-			DrawRectangleLines(m_viewportRect.GetX() - 1, m_viewportRect.GetY() - 1,
-							   m_viewportRect.GetWidth() + 1, m_viewportRect.GetHeight() + 1, 
-							   raylib::Color::White());
-
-			DrawTexture(m_pRT2D->GetTexture(), m_viewportRect.GetX(), 
-						m_viewportRect.GetY(), raylib::Color::White());
 		}
+
+		// Draw renderTexture2D + viewport bounds
+		DrawTexture(
+			m_pRT2D->GetTexture(), 
+			m_viewportRect.GetX(), 
+			m_viewportRect.GetY(), 
+			raylib::Color::White()
+		);
+		DrawRectangleLines(
+			m_viewportRect.GetX() - 1,
+			m_viewportRect.GetY() - 1,
+			m_viewportRect.GetWidth() + 1,
+			m_viewportRect.GetHeight() + 1,
+			raylib::Color::White()
+		);
 	}
 	m_pWindow->EndDrawing();
 }

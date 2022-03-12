@@ -5,26 +5,17 @@
 
 struct Event 
 {
-	Event() {};
-	virtual ~Event() {};
+	enum class TYPE { GEN_PTS };
+
+	struct GenPointsEvent { int numPoints; };
+
+	union 
+	{
+		GenPointsEvent genPtsEvt;
+	};
+public:
+	TYPE type;
+
 };
-//------------------------------------------------------------------
-struct PosChangeEvt : public Event 
-{
-	explicit PosChangeEvt(const glm::vec2& pos): m_pos(pos) {}
-	const glm::vec2& Position() const { return m_pos; }
-private:
-	const glm::vec2 m_pos;
-};
-//------------------------------------------------------------------
-struct GenPtsEvt : public Event
-{
-	explicit GenPtsEvt(const int numPoints): m_numPoints(numPoints) {}
-	const int NumPoints() const { return m_numPoints; }
-private:
-	const int m_numPoints;
-};
-//------------------------------------------------------------------
-struct ComputeCHEvt : public Event {};
 
 #endif
