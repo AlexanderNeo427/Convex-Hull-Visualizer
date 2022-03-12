@@ -12,7 +12,7 @@ SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 
 void SceneCH2D::OnInitialize()
 {
-	this->RegeneratePoints(30);
+	this->RegeneratePoints(55);
 	m_ch2D = std::make_shared<JarvisMarch2D>();
 }
 

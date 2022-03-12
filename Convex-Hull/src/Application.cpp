@@ -10,7 +10,7 @@ Application::Application()
 	:
 	m_pWindow(nullptr),
 	m_pRT2D(nullptr),
-	m_numPtsToGen(35)
+	m_numPtsToGen(55)
 {}
 
 void Application::OnInitialize()
