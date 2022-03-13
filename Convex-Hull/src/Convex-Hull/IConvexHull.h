@@ -14,6 +14,9 @@ struct Ch2DOutput
 };
 struct IConvexHull2D
 {
+	using AnimFrame2D = std::shared_ptr<IAnimFrame2D>;
+	using AnimFrame2DQueue = std::queue<AnimFrame2D>;
+
 	virtual Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) = 0;
 };
 //===========================================================================

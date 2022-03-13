@@ -24,7 +24,7 @@ void Application::OnInitialize()
 {
 	// Initialize Window
 	m_pWindow = std::make_unique<raylib::Window>(SCR_WIDTH, SCR_HEIGHT, "Convex Hull Visualizer");
-	m_pWindow->SetTargetFPS(144);
+	m_pWindow->SetTargetFPS(180);
 
 	// Initialize viewport rect 
 	const float rtHeight = static_cast<float>(m_pWindow->GetHeight()) * 0.88f;

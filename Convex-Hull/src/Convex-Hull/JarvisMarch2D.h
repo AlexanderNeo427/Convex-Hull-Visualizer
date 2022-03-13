@@ -1,7 +1,10 @@
 #ifndef _JARVIS_MARCH_2D_
 #define _JARVIS_MARCH_2D_
 
+#include "IConvexHull.h"
+#include "../IAnimFrame.h"
 #include "../Utils.h"
+#include <queue>
 
 struct JmFindLeftmost2D : public IAnimFrame2D
 {
@@ -59,39 +62,56 @@ private:
 //===============================================================================================
 struct JarvisMarch2D : public IConvexHull2D
 {
+public:
 	Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) override
 	{
         Ch2DOutput out;
 
+        auto [leftmostIdx, frameQueue] = GetLeftmostPoint(allPoints);
+        while (!frameQueue.empty())
+        {
+            auto animFrame = frameQueue.front();
+            frameQueue.pop();
+            out.animQueue.push(animFrame);
+        }
+
+        int currIdx = leftmostIdx;
+        int compareIdx = 0;
+        do
+        {
+            out.hullIndices.emplace_back(currIdx);
+
+            compareIdx = (currIdx + 1) % allPoints.size();
+            for (int i = 0; i < allPoints.size(); i++)
+            {
+                auto animFrame = std::make_shared<JmCompareAngle2D>(currIdx, i, compareIdx, out.hullIndices.size());
+                out.animQueue.push(animFrame);
+
+                const ORIENTATION& orient = Utils::Orientation(allPoints[currIdx], allPoints[i], allPoints[compareIdx]);
+                if (orient == ORIENTATION::COUNTER_CLOCKWISE)
+                    compareIdx = i;
+            }
+            currIdx = compareIdx;
+        } while (currIdx != leftmostIdx); 
+
+        return out;
+	}
+private:
+    std::pair<int, AnimFrame2DQueue> GetLeftmostPoint(const std::vector<glm::vec2>& allPoints) const
+    {
+        AnimFrame2DQueue frameQueue;
+
         int leftmostIdx = 0;
         for (int i = 0; i < allPoints.size(); i++)
         {
-            out.animQueue.push(std::make_shared<JmFindLeftmost2D>(i, leftmostIdx));
+            auto animFrame = std::make_shared<JmFindLeftmost2D>(i, leftmostIdx);
+            frameQueue.push(animFrame);
 
             if (allPoints[i].x < allPoints[leftmostIdx].x)
                 leftmostIdx = i;
         }
-
-        int p = leftmostIdx, q;
-        do
-        {
-            out.hullIndices.emplace_back(p);
-
-            q = (p + 1) % allPoints.size();
-            for (int i = 0; i < allPoints.size(); i++)
-            {
-                auto animFrame = std::make_shared<JmCompareAngle2D>(p, i, q, out.hullIndices.size());
-                out.animQueue.push(animFrame);
-
-                const auto& orient = Utils::Orientation(allPoints[p], allPoints[i], allPoints[q]);
-                if (orient == ORIENTATION::COUNTER_CLOCKWISE)
-                    q = i;
-            }
-            p = q;
-        } while (p != leftmostIdx); 
-
-        return out;
-	}
+        return { leftmostIdx, frameQueue };
+    }
 };
 
 #endif

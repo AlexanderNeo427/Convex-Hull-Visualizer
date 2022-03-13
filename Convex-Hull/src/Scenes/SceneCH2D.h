@@ -32,7 +32,6 @@ public:
 	void OnUpdate(const float deltaTime) override;
 	void OnRender() override;
 	void OnHandleEvent(const Event& event) override;
-
 private:
 	void RegeneratePoints(const int numPoints);
 	void OnEnterState(const STATE state);
