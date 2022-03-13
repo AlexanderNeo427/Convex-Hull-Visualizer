@@ -15,6 +15,13 @@
 
 class SceneCH2D : public IScene
 {
+private:
+	enum class STATE
+	{
+		IDLE,
+		GEN_PTS,
+		ANIMATING
+	};
 public:
 	explicit SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 					   const std::string& sceneID,
@@ -26,8 +33,12 @@ public:
 	void OnRender() override;
 	void OnHandleEvent(const Event& event) override;
 
-	void RegeneratePoints(const int numPoints);
 private:
+	void RegeneratePoints(const int numPoints);
+	void OnEnterState(const STATE state);
+private:
+	STATE m_state;
+
 	std::vector<glm::vec2> m_allPoints;
 	std::vector<int> m_hullIndices;
 
@@ -36,6 +47,7 @@ private:
 	std::shared_ptr<IAnimFrame2D> m_pAnimFrame;
 
 	float m_targetTimestep, m_timeElapsed;
+	int m_genPtsItr;
 };
 
 #endif

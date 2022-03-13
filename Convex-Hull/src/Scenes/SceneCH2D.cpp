@@ -7,35 +7,43 @@ SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 					 const int height)
 	:
 	IScene(pSceneManager, sceneID, width, height),
-	m_targetTimestep(0.f), m_timeElapsed(0.f)
+	m_state(STATE::IDLE),
+	m_targetTimestep(0.f),
+	m_timeElapsed(0.f),
+	m_genPtsItr(0)
 {}
 
 void SceneCH2D::OnInitialize()
 {
-	this->RegeneratePoints(50);
+	RegeneratePoints(50);
 	m_ch2D = std::make_shared<JarvisMarch2D>();
 }
 
 void SceneCH2D::OnUpdate(const float deltaTime)
 {
-	m_timeElapsed += deltaTime;
-	if (m_timeElapsed >= m_targetTimestep)
+	if (m_state == STATE::ANIMATING)
 	{
-		m_timeElapsed = 0.f;
-
-		if (m_animFrameQueue.empty())
-			m_pAnimFrame = nullptr;
-		else
+		m_timeElapsed += deltaTime;
+		if (m_timeElapsed >= m_targetTimestep)
 		{
-			m_pAnimFrame = m_animFrameQueue.front();
-			m_animFrameQueue.pop();
+			m_timeElapsed = 0.f;
+
+			if (m_animFrameQueue.empty())
+				m_pAnimFrame = nullptr;
+			else
+			{
+				m_pAnimFrame = m_animFrameQueue.front();
+				m_animFrameQueue.pop();
+			}
 		}
 	}
 }
 
 void SceneCH2D::OnRender()
 {
-	if (m_pAnimFrame == nullptr)
+	switch (m_state)
+	{
+	case SceneCH2D::STATE::IDLE:
 	{
 		for (int i = 0; i < m_hullIndices.size(); i++)
 		{
@@ -48,10 +56,34 @@ void SceneCH2D::OnRender()
 		{
 			DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
 		}
+		break;
 	}
-	else
+	case SceneCH2D::STATE::GEN_PTS:
 	{
+		if (m_genPtsItr >= m_allPoints.size() - 1)
+		{
+			OnEnterState(STATE::ANIMATING);
+			break;
+		}
+		for (int i = 0; i < m_genPtsItr; i++)
+		{
+			const glm::vec2& p = m_allPoints[i];
+			DrawCircle(p.x, p.y, 3.f, raylib::Color::Green());
+		}
+		m_genPtsItr++;
+		break;
+	}
+	case SceneCH2D::STATE::ANIMATING:
+	{
+		if (m_pAnimFrame == nullptr)
+		{
+			OnEnterState(STATE::IDLE);
+			break;
+		}
 		m_pAnimFrame->OnRender(m_allPoints, m_hullIndices);
+		break;
+	}
+	default: break;
 	}
 }
 
@@ -61,15 +93,20 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 	{
 	case Event::TYPE::GEN_PTS:
 	{
-		this->RegeneratePoints(event.genPtsData.numPoints);
+		RegeneratePoints(event.genPtsData.numPoints);
+		OnEnterState(STATE::GEN_PTS);
 		break;
 	}
 	case Event::TYPE::COMPUTE_CH:
 	{
+		if (m_state == STATE::GEN_PTS)
+			break;
+
 		m_animFrameQueue = {};
 		const Ch2DOutput out = m_ch2D->Compute(m_allPoints);
 		m_hullIndices = out.hullIndices;
 		m_animFrameQueue = out.animQueue;
+		OnEnterState(STATE::ANIMATING);
 		break;
 	}
 	case Event::TYPE::SET_TIMESTEP:
@@ -78,9 +115,9 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 		break;
 	}
 	case Event::TYPE::SET_CH_ALGO:
+		// TODO
 		break;
-	default:
-		break;
+	default: break;
 	}
 }
 
@@ -99,8 +136,36 @@ void SceneCH2D::RegeneratePoints(const int numPoints)
 	{
 		const glm::vec2& point = center + glm::diskRand(maxLen);
 		m_allPoints.emplace_back(point);
+	}
+}
 
-		auto anim = std::make_shared<GenPoint2D>(i);
-		m_animFrameQueue.push(anim);
+void SceneCH2D::OnEnterState(const STATE state)
+{
+	m_state = state;
+
+	switch (state)
+	{
+	case SceneCH2D::STATE::IDLE:
+	{
+		break;
+	}
+	case SceneCH2D::STATE::GEN_PTS:
+	{
+		m_genPtsItr = 0;
+		break;
+	}
+	case SceneCH2D::STATE::ANIMATING:
+	{
+		m_timeElapsed = 0.f;
+		if (m_animFrameQueue.empty())
+		{
+			OnEnterState(STATE::IDLE);
+			break;
+		}
+		m_pAnimFrame = m_animFrameQueue.front();
+		m_animFrameQueue.pop();
+		break;
+	}
+	default: break;
 	}
 }

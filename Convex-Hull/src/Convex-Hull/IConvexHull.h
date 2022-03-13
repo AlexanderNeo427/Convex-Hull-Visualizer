@@ -16,7 +16,7 @@ struct IConvexHull2D
 {
 	virtual Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) = 0;
 };
-//-----------------------------------------------------------------------------
+//===========================================================================
 struct Ch3DOutput
 {
 	std::vector<int> hullIndices;

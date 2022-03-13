@@ -24,11 +24,11 @@ struct JmFindLeftmost2D : public IAnimFrame2D
 private:
     int m_currLeftmostIdx, m_compareIdx;
 };
-//===========================================================================
-struct JmCompareAngle: public IAnimFrame2D
+//===============================================================================================
+struct JmCompareAngle2D: public IAnimFrame2D
 {
-    explicit JmCompareAngle(const int currIdx, const int prevIdx, 
-                            const int compareIdx, const int hullIndex)
+    explicit JmCompareAngle2D(const int currIdx, const int prevIdx,
+                             const int compareIdx, const int hullIndex)
         :
         m_currIdx(currIdx), m_prevIdx(prevIdx), m_compareIdx(compareIdx), m_hullIndex(hullIndex)
     {}
@@ -56,7 +56,7 @@ struct JmCompareAngle: public IAnimFrame2D
 private:
     int m_currIdx, m_prevIdx, m_compareIdx, m_hullIndex;
 };
-//===========================================================================
+//===============================================================================================
 struct JarvisMarch2D : public IConvexHull2D
 {
 	Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) override
@@ -80,7 +80,7 @@ struct JarvisMarch2D : public IConvexHull2D
             q = (p + 1) % allPoints.size();
             for (int i = 0; i < allPoints.size(); i++)
             {
-                auto animFrame = std::make_shared<JmCompareAngle>(p, i, q, out.hullIndices.size());
+                auto animFrame = std::make_shared<JmCompareAngle2D>(p, i, q, out.hullIndices.size());
                 out.animQueue.push(animFrame);
 
                 const auto& orient = Utils::Orientation(allPoints[p], allPoints[i], allPoints[q]);

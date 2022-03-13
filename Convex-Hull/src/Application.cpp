@@ -17,7 +17,7 @@ Application::Application()
 	m_targetTimestep(0.f)
 {
 	m_numPtsToGen = (MAX_POINTS - MIN_POINTS) / 2;
-	m_targetTimestep = (TIMESTEP_MAX - TIMESTEP_MIN) / 2.f;
+	m_targetTimestep = (TIMESTEP_MAX - TIMESTEP_MIN) * 0.1f;
 }
 
 void Application::OnInitialize()
