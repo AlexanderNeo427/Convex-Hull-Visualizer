@@ -171,6 +171,7 @@
   <ItemGroup>
     <ClInclude Include="external\SceneSystem\IScene.h" />
     <ClInclude Include="external\SceneSystem\SceneManager.h" />
+    <ClInclude Include="src\CommonAnimFrames\Compare2D.h" />
     <ClInclude Include="src\Convex-Hull\GrahamScan2D.h" />
     <ClInclude Include="src\Convex-Hull\IConvexHull.h" />
     <ClInclude Include="src\IAnimFrame.h" />

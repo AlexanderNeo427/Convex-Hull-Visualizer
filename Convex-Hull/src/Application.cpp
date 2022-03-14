@@ -103,7 +103,6 @@ void Application::OnRender()
 			m_eventQueue.push(evt);
 		}
 
-
 		// Draw renderTexture2D + viewport bounds
 		DrawTexture(
 			m_pRT2D->GetTexture(), 

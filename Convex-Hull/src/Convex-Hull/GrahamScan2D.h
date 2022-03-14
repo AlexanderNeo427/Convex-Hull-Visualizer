@@ -5,8 +5,10 @@
 #include <queue>
 
 #include "IConvexHull.h"
-#include "../IAnimFrame.h"
 #include "../Utils.h"
+
+#include "../IAnimFrame.h"
+#include "../CommonAnimFrames/Compare2D.h"
 
 class GrahamScan2D : public IConvexHull2D
 {
@@ -21,9 +23,11 @@ public:
 		// Sort all other points (by polar angle) relative to the bottom-most point
 		std::vector<glm::vec2> sortedPts = allPoints;
 		std::swap(sortedPts[0], sortedPts[bottomMostIdx]);
+		sortedPts.erase(sortedPts.begin());
 		sortedPts = SortPolarAngle(allPoints[bottomMostIdx], sortedPts);
 
-		for (int i = 1; i < sortedPts.size(); i++)
+		m_data.hullPoints.emplace_back(allPoints[bottomMostIdx]);
+		for (int i = 0; i < sortedPts.size(); i++)
 		{
 			const glm::vec2& curr = sortedPts[i];
 
@@ -46,12 +50,15 @@ public:
 		return m_data;
 	}
 private:
-	int GetBottomMostPoint(const std::vector<glm::vec2>& allPoints) const
+	int GetBottomMostPoint(const std::vector<glm::vec2>& allPoints) 
 	{
 		int bottomMostIdx = 0;
 		for (int i = 0; i < allPoints.size(); i++)
 		{
-			if (allPoints[bottomMostIdx].y < allPoints[i].y)
+			auto animFrame = std::make_shared<Compare2D>(i, bottomMostIdx);
+			m_data.animQueue.push(animFrame);
+
+			if (allPoints[bottomMostIdx].y > allPoints[i].y)
 				bottomMostIdx = i;
 		}
 		return bottomMostIdx;
@@ -61,9 +68,11 @@ private:
 		std::sort(points.begin(), points.end(),
 			[=, *this](const glm::vec2& p1, const glm::vec2& p2)
 			{
-				const float m1 = (p1.y - anchorPt.y) / (p1.x - anchorPt.x);
-				const float m2 = (p2.y - anchorPt.y) / (p2.x - anchorPt.x);
-				return m1 < m2;
+				const glm::vec2& d1 = p1 - anchorPt;
+				const glm::vec2& d2 = p2 - anchorPt;
+				const float a1 = std::atan2(d1.y, d1.x);
+				const float a2 = std::atan2(d2.y, d2.x);
+				return a1 < a2;
 			});
 		return points;
 	}
