@@ -7,8 +7,9 @@
 #include "IConvexHull.h"
 #include "../Utils.h"
 
-#include "../IAnimFrame.h"
-#include "../CommonAnimFrames/Compare2D.h"
+#include "../AnimFrames/Compare2D.h"
+#include "../AnimFrames/GsAngleSort2D.h"
+#include "../AnimFrames/GsMain2D.h"
 
 class GrahamScan2D : public IConvexHull2D
 {
@@ -26,6 +27,12 @@ public:
 		sortedPts.erase(sortedPts.begin());
 		sortedPts = SortPolarAngle(allPoints[bottomMostIdx], sortedPts);
 
+		for (int i = 0; i < sortedPts.size(); i++)
+		{
+			auto animFrame = std::make_shared<GsAngleSort2D>(allPoints[bottomMostIdx], sortedPts, i);
+			m_data.animQueue.push(animFrame);
+		}
+
 		m_data.hullPoints.emplace_back(allPoints[bottomMostIdx]);
 		for (int i = 0; i < sortedPts.size(); i++)
 		{
@@ -37,6 +44,11 @@ public:
 
 				const glm::vec2& last = m_data.hullPoints[m_data.hullPoints.size() - 1];
 				const glm::vec2& beforeLast = m_data.hullPoints[m_data.hullPoints.size() - 2];
+
+				{
+					auto animFrame = std::make_shared<GsMain2D>(m_data.hullPoints, curr);
+					m_data.animQueue.push(animFrame);
+				}
 
 				const ORIENTATION& orient = Utils::Orientation(beforeLast, last, curr);
 				if (orient != ORIENTATION::COUNTER_CLOCKWISE)
@@ -76,7 +88,6 @@ private:
 			});
 		return points;
 	}
-
 };
 
 #endif

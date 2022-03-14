@@ -171,10 +171,13 @@
   <ItemGroup>
     <ClInclude Include="external\SceneSystem\IScene.h" />
     <ClInclude Include="external\SceneSystem\SceneManager.h" />
-    <ClInclude Include="src\CommonAnimFrames\Compare2D.h" />
+    <ClInclude Include="src\AnimFrames\Compare2D.h" />
+    <ClInclude Include="src\AnimFrames\GsAngleSort2D.h" />
+    <ClInclude Include="src\AnimFrames\GsMain2D.h" />
+    <ClInclude Include="src\AnimFrames\JmCompareAngle2D.h" />
     <ClInclude Include="src\Convex-Hull\GrahamScan2D.h" />
     <ClInclude Include="src\Convex-Hull\IConvexHull.h" />
-    <ClInclude Include="src\IAnimFrame.h" />
+    <ClInclude Include="src\AnimFrames\IAnimFrame.h" />
     <ClInclude Include="src\Point.h" />
     <ClInclude Include="src\Scenes\SceneCH2D.h" />
     <ClInclude Include="src\Application.h" />

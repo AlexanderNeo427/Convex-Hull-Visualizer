@@ -5,7 +5,7 @@
 #include <memory>
 #include <queue>
 
-#include "../IAnimFrame.h"
+#include "../AnimFrames/IAnimFrame.h"
 
 struct Ch2DOutput
 {

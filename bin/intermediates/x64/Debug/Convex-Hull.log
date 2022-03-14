@@ -4,132 +4,182 @@ D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Utils.h(19,11): warn
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(20,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(18,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(20,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(18,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(24,32): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(22,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(24,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(22,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(25,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(23,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(25,23): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(23,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(44,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(44,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(44,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(44,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(45,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(45,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(45,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(45,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(52,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(52,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(52,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(52,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(56,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(35,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(56,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(35,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(18,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(18,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(23,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(23,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(24,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(28,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\CommonAnimFrames\Compare2D.h(24,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(28,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,34): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,28): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,59): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,44): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,29): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,19): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(34,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(34,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
           with
           [
               T=float
@@ -190,5 +240,5 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.3110
           [
               _Ty=JmCompareAngle2D
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(83): message : see reference to function template instantiation 'std::shared_ptr<JmCompareAngle2D> std::make_shared<JmCompareAngle2D,int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(31): message : see reference to function template instantiation 'std::shared_ptr<JmCompareAngle2D> std::make_shared<JmCompareAngle2D,int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
   Convex-Hull.vcxproj -> D:\Projects\C++\GitHub Projects\Convex-Hull\bin\x64\Debug\Convex-Hull.exe
