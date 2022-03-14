@@ -20,9 +20,13 @@ struct GsMain2D : public IAnimFrame2D
 		{
 			for (int i = 0; i < m_hull.size() - 1; i++)
 			{
+				const bool isLast = (i == m_hull.size() - 2);
+				const raylib::Color nextCol = isLast ? raylib::Color::Blue() : 
+													   raylib::Color::Yellow();
+
 				const glm::vec2& p1 = m_hull[i];
 				const glm::vec2& p2 = m_hull[i + 1];
-				DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::Yellow());
+				DrawLine(p1.x, p1.y, p2.x, p2.y, nextCol);
 			}
 		}
 		{

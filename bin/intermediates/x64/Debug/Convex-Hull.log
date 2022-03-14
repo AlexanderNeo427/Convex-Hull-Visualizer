@@ -1,244 +1,45 @@
-﻿  SceneCH2D.cpp
+﻿  Application.cpp
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2352,52): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(2385,48): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3059,87): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3060,105): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3061,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3062,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\external\raylib\src\extras\raygui.h(3063,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Utils.h(19,11): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(18,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(34,55): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(34,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(35,48): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(35,17): warning C4244: 'initializing': conversion from 'float' to 'const int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(36,35): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(36,29): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(85,11): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(83,28): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(129,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(128,23): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(136,31): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(135,30): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(134,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(133,26): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(149,77): warning C4244: 'argument': conversion from 'const float' to 'const int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(_Ty &,std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &) noexcept(false)' being compiled
           with
           [
-              T=float
+              _Ty=SceneCH2D
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(18,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
           with
           [
-              T=float
+              _Ty=SceneCH2D
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(22,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
           with
           [
-              T=float
+              _Ty=SceneCH2D
           ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(22,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(23,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\Compare2D.h(23,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(23,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,46): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,38): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(24,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(31,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(35,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\JmCompareAngle2D.h(35,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,42): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,36): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(24,24): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(28,30): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsAngleSort2D.h(28,25): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,34): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,28): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,22): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(25,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,59): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,44): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,29): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(30,19): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(34,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\AnimFrames\GsMain2D.h(34,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(54,33): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(54,27): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(54,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(54,15): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(58,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(58,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(72,21): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Scenes\SceneCH2D.cpp(72,16): warning C4244: 'argument': conversion from 'const T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\xutility(142,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2006): message : see reference to function template instantiation 'void std::_Construct_in_place<_Ty,int&,int&,int&,unsigned __int64>(_Ty &,int &,int &,int &,unsigned __int64 &&) noexcept(false)' being compiled
-          with
-          [
-              _Ty=JmCompareAngle2D
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2725): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
-          with
-          [
-              _Ty=JmCompareAngle2D
-          ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.31.31103\include\memory(2726): message : see reference to function template instantiation 'std::_Ref_count_obj2<_Ty>::_Ref_count_obj2<int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
-          with
-          [
-              _Ty=JmCompareAngle2D
-          ]
-D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Convex-Hull\JarvisMarch2D.h(31): message : see reference to function template instantiation 'std::shared_ptr<JmCompareAngle2D> std::make_shared<JmCompareAngle2D,int&,int&,int&,unsigned __int64>(int &,int &,int &,unsigned __int64 &&)' being compiled
+D:\Projects\C++\GitHub Projects\Convex-Hull\Convex-Hull\src\Application.cpp(46): message : see reference to function template instantiation 'std::shared_ptr<SceneCH2D> std::make_shared<SceneCH2D,std::shared_ptr<SceneManager>&,const char(&)[10],const float&,const float&>(std::shared_ptr<SceneManager> &,const char (&)[10],const float &,const float &)' being compiled
   Convex-Hull.vcxproj -> D:\Projects\C++\GitHub Projects\Convex-Hull\bin\x64\Debug\Convex-Hull.exe

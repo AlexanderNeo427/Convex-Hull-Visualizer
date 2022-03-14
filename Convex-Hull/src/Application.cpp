@@ -14,7 +14,9 @@ Application::Application()
 	m_eventQueue(),
 	m_viewportRect(),
 	m_numPtsToGen(0),
-	m_targetTimestep(0.f)
+	m_targetTimestep(0.f),
+	m_dropdownChoice(0),
+	m_isDropdownEditMode(false)
 {
 	m_numPtsToGen = (MAX_POINTS - MIN_POINTS) / 2;
 	m_targetTimestep = (TIMESTEP_MAX - TIMESTEP_MIN) * 0.1f;
@@ -73,14 +75,16 @@ void Application::OnRender()
 	// Draw GUI elements
 	m_pWindow->BeginDrawing();
 	m_pWindow->ClearBackground(raylib::Color::Blank());
-	DrawFPS(25, 20);
+	// DrawFPS(25, 20);
 	{
+		if (m_isDropdownEditMode) GuiLock();
+
 		// Draw GUI elements
-		m_numPtsToGen = GuiSlider(Rectangle{ 130, 120, 370, 30 }, "No. points ",
+		m_numPtsToGen = GuiSlider(Rectangle{ 130, 130, 370, 30 }, "No. points ",
 								  std::to_string(m_numPtsToGen).c_str(),
 								  m_numPtsToGen, MIN_POINTS, MAX_POINTS);
 
-		if (GuiButton(Rectangle{ 130, 170, 200, 38 }, "Generate Points"))
+		if (GuiButton(Rectangle{ 130, 180, 200, 38 }, "Generate Points"))
 		{
 			Event evt;
 			evt.type = Event::TYPE::GEN_PTS;
@@ -88,7 +92,7 @@ void Application::OnRender()
 			m_eventQueue.push(evt);
 		}
 		{
-			m_targetTimestep = GuiSlider(Rectangle{ 130, 400, 370, 30 }, "Timestep ",
+			m_targetTimestep = GuiSlider(Rectangle{ 130, 420, 370, 30 }, "Timestep ",
 										 std::to_string(m_targetTimestep).c_str(),
 										 m_targetTimestep, TIMESTEP_MIN, TIMESTEP_MAX);
 			Event evt;
@@ -96,12 +100,27 @@ void Application::OnRender()
 			evt.setTimeStepData.timeStep = m_targetTimestep;
 			m_eventQueue.push(evt);
 		}
-		if (GuiButton(Rectangle{ 130, 450, 250, 45 }, "Compute Convex Hull"))
+		if (GuiButton(Rectangle{ 130, 470, 250, 45 }, "Compute Convex Hull"))
 		{
 			Event evt;
 			evt.type = Event::TYPE::COMPUTE_CH;
 			m_eventQueue.push(evt);
 		}
+		{
+			std::string choices = "Jarvis March;Graham Scan"; // Must match order of CH_ALGO enum
+
+			if (GuiDropdownBox(Rectangle{ 130, 350, 220, 45 },
+				choices.c_str(), &m_dropdownChoice, m_isDropdownEditMode))
+			{
+				m_isDropdownEditMode = !m_isDropdownEditMode;
+
+				Event evt;
+				evt.type = Event::TYPE::SET_CH_ALGO;
+				evt.setChAlgoData.algoType = static_cast<CH_ALGO>(m_dropdownChoice);
+				m_eventQueue.push(evt);
+			}
+		}
+		GuiUnlock();
 
 		// Draw renderTexture2D + viewport bounds
 		DrawTexture(

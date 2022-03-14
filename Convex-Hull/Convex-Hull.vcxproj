@@ -175,6 +175,7 @@
     <ClInclude Include="src\AnimFrames\GsAngleSort2D.h" />
     <ClInclude Include="src\AnimFrames\GsMain2D.h" />
     <ClInclude Include="src\AnimFrames\JmCompareAngle2D.h" />
+    <ClInclude Include="src\Convex-Hull\ConvexHullAlgos.h" />
     <ClInclude Include="src\Convex-Hull\GrahamScan2D.h" />
     <ClInclude Include="src\Convex-Hull\IConvexHull.h" />
     <ClInclude Include="src\AnimFrames\IAnimFrame.h" />

@@ -1,4 +1,7 @@
 #include "SceneCH2D.h"
+#include "../Convex-Hull/ConvexHullAlgos.h"
+
+// Actual implementations
 #include "../Convex-Hull/JarvisMarch2D.h"
 #include "../Convex-Hull/GrahamScan2D.h"
 
@@ -116,8 +119,15 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 		break;
 	}
 	case Event::TYPE::SET_CH_ALGO:
-		// TODO
-		break;
+		switch (event.setChAlgoData.algoType)
+		{
+		case CH_ALGO::JARVIS_MARCH: 
+			m_ch2D = std::make_shared<JarvisMarch2D>();
+			break;
+		case CH_ALGO::GRAHAM_SCAN:
+			m_ch2D = std::make_shared<GrahamScan2D>();
+			break;
+		}
 	default: break;
 	}
 }

@@ -2,6 +2,7 @@
 #define _EVENTS_
 
 #include <glm/vec2.hpp>
+#include "Convex-Hull/ConvexHullAlgos.h"
 
 struct Event 
 {
@@ -16,7 +17,7 @@ public:
 public:
 	struct GenPointsEvent { int numPoints; };
 	struct SetTimeStep { float timeStep; };
-	struct SetChAlgo {};
+	struct SetChAlgo { CH_ALGO algoType; };
 public:
 	union 
 	{
