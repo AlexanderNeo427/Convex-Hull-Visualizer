@@ -39,7 +39,7 @@ private:
 	STATE m_state;
 
 	std::vector<glm::vec2> m_allPoints;
-	std::vector<int> m_hullIndices;
+	std::vector<glm::vec2> m_hullPoints;
 
 	std::shared_ptr<IConvexHull2D> m_ch2D;
 	std::queue<std::shared_ptr<IAnimFrame2D>> m_animFrameQueue;

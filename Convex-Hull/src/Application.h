@@ -36,9 +36,11 @@ private:
 	std::shared_ptr<raylib::RenderTexture2D> m_pRT2D;
 	std::queue<Event>						 m_eventQueue;
 	raylib::Rectangle						 m_viewportRect;
-private:
+private: // GUI state
 	int m_numPtsToGen;
 	float m_targetTimestep;
+
+
 };
 
 #endif

@@ -12,8 +12,8 @@ struct JmFindLeftmost2D : public IAnimFrame2D
         :
         m_currLeftmostIdx(leftmostIdx), m_compareIdx(compareIdx)
     {}
-    void OnRender(const std::vector<glm::vec2> allPoints,
-                  const std::vector<int> hullIndices) override
+    void OnRender(const std::vector<glm::vec2>& allPoints,
+                  const std::vector<glm::vec2>& hullPoints) override
     {
         for (const glm::vec2& p : allPoints)
         {
@@ -35,8 +35,8 @@ struct JmCompareAngle2D: public IAnimFrame2D
         :
         m_currIdx(currIdx), m_prevIdx(prevIdx), m_compareIdx(compareIdx), m_hullIndex(hullIndex)
     {}
-    void OnRender(const std::vector<glm::vec2> allPoints,
-                  const std::vector<int> hullIndices) override
+    void OnRender(const std::vector<glm::vec2>& allPoints,
+                  const std::vector<glm::vec2>& hullPoints) override
     {
         const glm::vec2& curr = allPoints[m_currIdx];
         const glm::vec2& prev = allPoints[m_prevIdx];
@@ -47,8 +47,8 @@ struct JmCompareAngle2D: public IAnimFrame2D
         for (int i = 0; i < m_hullIndex - 1; i++)
         {
             const int nextIdx = (i == m_hullIndex - 1) ? 0 : (i + 1);
-            const glm::vec2& p1 = allPoints[hullIndices[i]];
-            const glm::vec2& p2 = allPoints[hullIndices[i + 1]];
+            const glm::vec2& p1 = hullPoints[i];
+            const glm::vec2& p2 = hullPoints[nextIdx];
             DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::Yellow());
         }
         for (const glm::vec2& p : allPoints)
@@ -65,52 +65,50 @@ struct JarvisMarch2D : public IConvexHull2D
 public:
 	Ch2DOutput Compute(const std::vector<glm::vec2>& allPoints) override
 	{
-        Ch2DOutput out;
+        m_data.Clear();
 
-        auto [leftmostIdx, frameQueue] = GetLeftmostPoint(allPoints);
-        while (!frameQueue.empty())
-        {
-            auto animFrame = frameQueue.front();
-            frameQueue.pop();
-            out.animQueue.push(animFrame);
-        }
+        int leftmostIdx = GetLeftmostPoint(allPoints);
 
+        // Find leftmost point relative to curr
+        // Set that point as curr
+        // Repeat (until curr reaches the initial point)
         int currIdx = leftmostIdx;
-        int compareIdx = 0;
         do
         {
-            out.hullIndices.emplace_back(currIdx);
+            m_data.hullPoints.emplace_back(allPoints[currIdx]);
 
-            compareIdx = (currIdx + 1) % allPoints.size();
+            int compareIdx = 0;
             for (int i = 0; i < allPoints.size(); i++)
             {
-                auto animFrame = std::make_shared<JmCompareAngle2D>(currIdx, i, compareIdx, out.hullIndices.size());
-                out.animQueue.push(animFrame);
+                auto animFrame = std::make_shared<JmCompareAngle2D>(currIdx, i, compareIdx, m_data.hullPoints.size());
+                m_data.animQueue.push(animFrame);
 
-                const ORIENTATION& orient = Utils::Orientation(allPoints[currIdx], allPoints[i], allPoints[compareIdx]);
+                const glm::vec2& p1 = allPoints[currIdx];
+                const glm::vec2& p2 = allPoints[i];
+                const glm::vec2& p3 = allPoints[compareIdx];
+                const ORIENTATION& orient = Utils::Orientation(p1, p2, p3);
+
                 if (orient == ORIENTATION::COUNTER_CLOCKWISE)
                     compareIdx = i;
             }
             currIdx = compareIdx;
-        } while (currIdx != leftmostIdx); 
-
-        return out;
+        } while (currIdx != leftmostIdx); // If back to first point, finish
+   
+        return m_data;
 	}
 private:
-    std::pair<int, AnimFrame2DQueue> GetLeftmostPoint(const std::vector<glm::vec2>& allPoints) const
+    int GetLeftmostPoint(const std::vector<glm::vec2>& allPoints) 
     {
-        AnimFrame2DQueue frameQueue;
-
         int leftmostIdx = 0;
         for (int i = 0; i < allPoints.size(); i++)
         {
             auto animFrame = std::make_shared<JmFindLeftmost2D>(i, leftmostIdx);
-            frameQueue.push(animFrame);
+            m_data.animQueue.push(animFrame);
 
             if (allPoints[i].x < allPoints[leftmostIdx].x)
                 leftmostIdx = i;
         }
-        return { leftmostIdx, frameQueue };
+        return leftmostIdx;
     }
 };
 

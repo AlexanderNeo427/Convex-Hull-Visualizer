@@ -1,5 +1,6 @@
 #include "SceneCH2D.h"
 #include "../Convex-Hull/JarvisMarch2D.h"
+#include "../Convex-Hull/GrahamScan2D.h"
 
 SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager, 
 					 const std::string& sceneID, 
@@ -16,7 +17,7 @@ SceneCH2D::SceneCH2D(std::shared_ptr<SceneManager> pSceneManager,
 void SceneCH2D::OnInitialize()
 {
 	RegeneratePoints(50);
-	m_ch2D = std::make_shared<JarvisMarch2D>();
+	m_ch2D = std::make_shared<GrahamScan2D>();
 }
 
 void SceneCH2D::OnUpdate(const float deltaTime)
@@ -45,11 +46,11 @@ void SceneCH2D::OnRender()
 	{
 	case SceneCH2D::STATE::IDLE:
 	{
-		for (int i = 0; i < m_hullIndices.size(); i++)
+		for (int i = 0; i < m_hullPoints.size(); i++)
 		{
-			const int nextIdx = (i == m_hullIndices.size() - 1) ? 0 : (i + 1);
-			const glm::vec2& p1 = m_allPoints[m_hullIndices[i]];
-			const glm::vec2& p2 = m_allPoints[m_hullIndices[nextIdx]];
+			const int nextIdx = (i == m_hullPoints.size() - 1) ? 0 : (i + 1);
+			const glm::vec2& p1 = m_hullPoints[i];
+			const glm::vec2& p2 = m_hullPoints[nextIdx];
 			DrawLine(p1.x, p1.y, p2.x, p2.y, raylib::Color::Yellow());
 		}
 		for (const glm::vec2& p : m_allPoints)
@@ -80,7 +81,7 @@ void SceneCH2D::OnRender()
 			OnEnterState(STATE::IDLE);
 			break;
 		}
-		m_pAnimFrame->OnRender(m_allPoints, m_hullIndices);
+		m_pAnimFrame->OnRender(m_allPoints, m_hullPoints);
 		break;
 	}
 	default: break;
@@ -103,9 +104,9 @@ void SceneCH2D::OnHandleEvent(const Event& event)
 			break;
 
 		m_animFrameQueue = {};
-		const Ch2DOutput out = m_ch2D->Compute(m_allPoints);
-		m_hullIndices = out.hullIndices;
-		m_animFrameQueue = out.animQueue;
+		const Ch2DOutput data = m_ch2D->Compute(m_allPoints);
+		m_hullPoints = data.hullPoints;
+		m_animFrameQueue = data.animQueue;
 		OnEnterState(STATE::ANIMATING);
 		break;
 	}
@@ -125,7 +126,7 @@ void SceneCH2D::RegeneratePoints(const int numPoints)
 {
 	m_animFrameQueue = {};
 	m_allPoints.clear();
-	m_hullIndices.clear();
+	m_hullPoints.clear();
 
 	const float width = static_cast<float>(Width());
 	const float height = static_cast<float>(Height());
@@ -145,10 +146,7 @@ void SceneCH2D::OnEnterState(const STATE state)
 
 	switch (state)
 	{
-	case SceneCH2D::STATE::IDLE:
-	{
-		break;
-	}
+	case SceneCH2D::STATE::IDLE: break;
 	case SceneCH2D::STATE::GEN_PTS:
 	{
 		m_genPtsItr = 0;
