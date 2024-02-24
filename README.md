@@ -1,4 +1,4 @@
-# Convex Hull
+# 2D Convex Hull Visualizer
 
 [Demo Video](https://youtu.be/ysKY90w-4r8?si=kWAAfBrtOZyzJ7El)
 
