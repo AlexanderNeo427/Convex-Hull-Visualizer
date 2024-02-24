@@ -1,8 +1,6 @@
-# 2D Convex Hull Visualizer
+# Convex Hull Visualizer
 
-[Demo Video](https://youtu.be/ysKY90w-4r8?si=kWAAfBrtOZyzJ7El)
-
-2D visualisation of the step-by-step process of various Convex Hull algorithms. Made with C++, using Raysan5's Raylib for rendering, and RayGUI for the GUI 
+2D visualization of the step-by-step process of various Convex Hull algorithms. Made with C++, using Raysan5's Raylib for rendering, and RayGUI _(an immediate mode GUI module meant to work with Raylib)_ for the GUI. Demo video can be found [here](https://youtu.be/ysKY90w-4r8?si=l_IQdczHY3_THxfU)
 
 ### Implementation
 * The concrete implementations of many of these algorithms usually involve quite a few nested loops, and I don't want to dirty up my update loop by placing a _render()_ call inside it.
